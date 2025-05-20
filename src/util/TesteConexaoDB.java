@@ -7,15 +7,19 @@ senha e nome do banco de dados estão corretos, utilizando-se
 o driver JDBC para MySQL*/
 
 import java.sql.Connection;
+
 public class TesteConexaoDB {
     public static void main(String[] args) {
         Conexao conexao = new Conexao();
         Connection condb = conexao.conectar();
+
         if (condb != null) {
             System.out.println("Conexão estabelcida com sucesso!");
+
             try {
                 condb.close();
                 System.out.println("Conexão encerrada!");
+
             } catch (Exception erro) {
                 System.out.println("Erro ao conectar ao banco de dados!");
             }
